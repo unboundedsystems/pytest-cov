@@ -66,6 +66,10 @@ def pytest_addoption(parser):
     group.addoption('--cov-config', action='store', default='.coveragerc',
                     metavar='path',
                     help='config file for coverage, default: .coveragerc')
+    group.addoption('--cov-data', action='store', default='.coverage',
+                    metavar='filename',
+                    help='base name for for coverage data file, '
+                    'default: .coverage')
     group.addoption('--no-cov-on-fail', action='store_true', default=False,
                     help='do not report coverage if test run fails, '
                          'default: False')
@@ -166,6 +170,7 @@ class CovPlugin(object):
             self.options.cov_report,
             self.options.cov_config,
             self.options.cov_append,
+            self.options.cov_data,
             config,
             nodeid
         )
