@@ -58,8 +58,7 @@ def init():
             source=cov_source,
             data_suffix=True,
             config_file=cov_config,
-            auto_data=True,
-            data_file=cov_datafile
+            auto_data=True
         )
         cov.load()
         cov.start()

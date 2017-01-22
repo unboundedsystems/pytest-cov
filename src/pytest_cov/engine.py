@@ -39,7 +39,7 @@ class CovController(object):
             os.environ['COV_CORE_CONFIG'] = config_file
         else:
             os.environ['COV_CORE_CONFIG'] = ''
-        os.environ['COV_CORE_DATAFILE'] = os.path.abspath('.coverage')
+        os.environ['COV_CORE_DATAFILE'] = '1' # Not set to an explicit filename, but enabled
 
     @staticmethod
     def unset_env():
